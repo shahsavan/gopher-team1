@@ -3,6 +3,27 @@ package main
 import "fmt"
 
 func main() {
+	//collections()
+	switchs()
+}
+
+func switchs() {
+	arr := [...]string{"Hamed", "Maghsoud", "Mina", "Saeed"}
+	fmt.Println(arr)
+	fmt.Println("-------------------------Switch--------------------------------")
+	for i, v := range arr {
+		switch {
+		case i == 0:
+			fmt.Printf("Zero Item %d with val %v\n", i, v)
+		case i%2 == 0:
+			fmt.Printf("Even Item %d with val %v\n", i, v)
+		default:
+			fmt.Printf("Odd Item %d with val %v\n", i, v)
+		}
+	}
+}
+
+func collections() {
 	arr := [...]string{"Hamed", "Maghsoud", "Mina", "Saeed"}
 	fmt.Println(arr)
 	fmt.Println("--------------------------------")
@@ -72,4 +93,46 @@ func main() {
 		fmt.Println(k)
 	}
 	fmt.Println("Finiiiiiish")
+}
+
+type animal interface {
+	move()
+}
+type snake struct {
+	movement string
+}
+type bird struct {
+	movement string
+}
+
+type mammal struct {
+	movement string
+}
+
+func (o snake) move() {
+	fmt.Println(o.movement)
+}
+
+func (o snake) crawl() {
+	fmt.Println("crawling")
+}
+func (o bird) move() {
+	fmt.Println(o.movement)
+}
+
+func (o bird) fly() {
+	fmt.Println("fly")
+}
+func (o mammal) move() {
+	fmt.Println(o.movement)
+}
+
+func (o mammal) walk() {
+	fmt.Println("walk")
+}
+func printMyType(v animal) {
+	// please instantiate of each animal. snake, mammal and bird
+	// using switch case please find the animal type and print the type
+	// based on type, please call specific method of the object, == fly(),walk() and crawl()
+	// thanks a lot
 }
